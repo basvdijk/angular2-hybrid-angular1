@@ -6,7 +6,7 @@ import {SayHello} from "../say-hello/say-hello";
 })
 
 @View({
-    templateUrl: "../app/components/hello/hello.html",
+    templateUrl: "../app/angular2/components/hello/hello.html",
     directives: [SayHello]
 })
 

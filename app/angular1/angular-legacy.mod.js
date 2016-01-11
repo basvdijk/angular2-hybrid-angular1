@@ -2,14 +2,14 @@ angular.module('angular-legacy',[]);
 
 angular.module('angular-legacy').controller('testController', function() {
 
-    this.message = 'Angular 1.x integrating with Angular 2.0 components';
+  var vm = this;
 
-    this.operands = {op1:10, op2:20};
+  vm.message = 'Angular 1.x integrating with Angular 2.0 components';
 
-    this.value = {current:100, previous:null};
+  vm.number = 10;
+  
+  vm.increment = function(){
+    vm.number += 1;
+  };
 
-    this.increment = function(){
-      this.operands.op1 += 1;
-      this.operands.op2 += 1;
-    };
 });

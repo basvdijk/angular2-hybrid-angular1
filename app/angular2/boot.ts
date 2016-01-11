@@ -3,7 +3,7 @@ import {Component} from "angular2/core";
 import {UpgradeAdapter} from "angular2/upgrade";
 import {bootstrap} from "angular2/platform/browser";
 
-import {Hello} from "../components/hello/hello";
+import {Hello} from "./components/hello/hello";
 
 declare let angular: any;
 

@@ -11,33 +11,41 @@
       });
     </script>
 
-
   </head>
 
   <body>
 
-      <h1>Angular 1 section</h1>
+    <h1>Angular 1 section</h1>
 
-      <div ng-controller="testController as testController">
-          <p>{{testController.message}}</p>
-      </div>
+    <div ng-controller="testController as Ctrl">
+        <p>{{ Ctrl.message }}</p>
+        <p>{{ Ctrl.number }}</p>
+        <button ng-click="Ctrl.increment()">+1</button>
+    </div>
 
+    <h1>Angular 2 section</h1>
 
-      <h1>Angular 2 section</h1>
+    <hello>Loading hello...</hello>
 
-
-      <hello>Loading hello...</hello>
   </body>
 
-  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <!-- ANGULAR 1 -->
+  <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+
+  <!-- ANGULAR 2 -->
+
+  <!-- The Reactive Extensions for JavaScript http://reactivex.io -->
   <script src="node_modules/rxjs/bundles/Rx.js"></script>
 
-  <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+  <!-- Angular 2 bundle -->
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
   <script src="https://code.angularjs.org/2.0.0-beta.1/angular2.js"></script>
   <script src="https://code.angularjs.org/2.0.0-beta.1/upgrade.min.js"></script>
 
+  <!-- App's Angular 1 modules -->
   <script src="app/angular1/angular-legacy.mod.js"></script>
 
-  <script>System.import('app/angular1/angular1');</script>
+  <!-- App's Angular 2 -->
+  <script>System.import('app/angular2/boot');</script>
 
 </html>

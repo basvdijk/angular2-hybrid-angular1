@@ -5,7 +5,7 @@ import {Component, View} from "angular2/core";
 })
 
 @View({
-    templateUrl: "../app/components/say-hello/say-hello.html",
+    templateUrl: "../app/angular2/components/say-hello/say-hello.html",
 })
 
 export class SayHello {
