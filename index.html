@@ -11,26 +11,33 @@
       });
     </script>
 
-    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    <script src="node_modules/rxjs/bundles/Rx.js"></script>
-    <!-- <script src="node_modules/angular2/bundles/angular2.dev.js"></script> -->
-
-
-    <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.1/angular2.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.1/upgrade.min.js"></script>
-
-    <script src="app/angular1/angular-legacy.mod.js"></script>
 
   </head>
 
-  <!-- 3. Display the application -->
   <body>
-      <script>System.import('app/angular1/angular1');</script>
-    <my-app>Loading...</my-app>
+
+      <h1>Angular 1 section</h1>
+
+      <div ng-controller="testController as testController">
+          <p>{{testController.message}}</p>
+      </div>
 
 
-    <algorithms></algorithms>
+      <h1>Angular 2 section</h1>
+
+
+      <hello>Loading hello...</hello>
   </body>
+
+  <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+  <script src="node_modules/rxjs/bundles/Rx.js"></script>
+
+  <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.1/angular2.js"></script>
+  <script src="https://code.angularjs.org/2.0.0-beta.1/upgrade.min.js"></script>
+
+  <script src="app/angular1/angular-legacy.mod.js"></script>
+
+  <script>System.import('app/angular1/angular1');</script>
 
 </html>

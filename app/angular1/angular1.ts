@@ -1,22 +1,17 @@
+
 import {Component} from "angular2/core";
 import {UpgradeAdapter} from "angular2/upgrade";
 import {bootstrap} from "angular2/platform/browser";
 
-import {AppComponent} from "../components/home/home.component";
+import {Hello} from "../components/hello/hello";
 
-import {Algorithms} from "../components/algorithms/algorithms";
+declare let angular: any;
 
-// import {Adder} from "./components/adder/adder";
-// import {Counter} from "./components/counter/counter";
+// Create a new upgrade adapter
+let adapter: UpgradeAdapter = new UpgradeAdapter();
 
-declare var angular:any;
+// Downgrade Angular 2 component as a directive
+angular.module("angular-legacy").directive("hello", adapter.downgradeNg2Component(Hello));
 
-var adapter: UpgradeAdapter = new UpgradeAdapter();
-
-angular.module("angular-legacy").directive("algorithms", adapter.downgradeNg2Component(Algorithms));
-
-angular.module("angular-legacy").directive("my-app", adapter.downgradeNg2Component(AppComponent));
-// angular.module("angular-legacy").directive("add",adapter.downgradeNg2Component(Adder));
-// angular.module("angular-legacy").directive("counterButton",adapter.downgradeNg2Component(Counter));
-
+// Bootstrap the Angular 1 app
 adapter.bootstrap(document.body, ["angular-legacy"]);
