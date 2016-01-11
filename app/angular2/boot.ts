@@ -11,7 +11,7 @@ declare let angular: any;
 let adapter: UpgradeAdapter = new UpgradeAdapter();
 
 // Downgrade Angular 2 component as a directive
-angular.module("angular-legacy").directive("hello", adapter.downgradeNg2Component(Hello));
+angular.module("app").directive("hello", adapter.downgradeNg2Component(Hello));
 
 // Bootstrap the Angular 1 app
-adapter.bootstrap(document.body, ["angular-legacy"]);
+adapter.bootstrap(document.body, ["app"]);

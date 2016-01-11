@@ -15,22 +15,14 @@
 
   <body>
 
-    <h1>Angular 1 section</h1>
-
-    <div ng-controller="testController as Ctrl">
-        <p>{{ Ctrl.message }}</p>
-        <p>{{ Ctrl.number }}</p>
-        <button ng-click="Ctrl.increment()">+1</button>
-    </div>
-
-    <h1>Angular 2 section</h1>
-
-    <hello>Loading hello...</hello>
+    <div ng-view></div>
 
   </body>
 
   <!-- ANGULAR 1 -->
   <script src="https://code.angularjs.org/1.4.7/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+
 
   <!-- ANGULAR 2 -->
 
@@ -43,7 +35,8 @@
   <script src="https://code.angularjs.org/2.0.0-beta.1/upgrade.min.js"></script>
 
   <!-- App's Angular 1 modules -->
-  <script src="app/angular1/angular-legacy.mod.js"></script>
+  <script src="app/angular1/app.mod.js"></script>
+  <script src="app/angular1/main/main.mod.js"></script>
 
   <!-- App's Angular 2 -->
   <script>System.import('app/angular2/boot');</script>
