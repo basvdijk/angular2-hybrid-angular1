@@ -1,26 +1,34 @@
 import {Component, View} from "angular2/core";
-//import {TasksDataService} from "./tasks.srv";
+import {Injectable} from "angular2/core";
+import {TasksDataService} from "./tasks.srv";
+
 
 @Component({
-    selector: "tasks"
+    selector: "tasks",
+    providers: [TasksDataService] // this was called injectables before alpha 42
 })
 
 @View({
     templateUrl: "../app/angular2/components/tasks/tasks.html",
 })
 
+@Injectable()
 export class Tasks {
 
   tasksVariable:Array<any>;
+  tasksServiceData:Array<any>;
 
-  //constructor(public tasksDataService: TasksDataService) {}
+  constructor(public tasksDataService: TasksDataService) {
 
-  constructor() {
+    this.tasksServiceData = tasksDataService.getTasks();
+
     this.tasksVariable = [
       "task 1",
       "task 2",
       "task 3"
     ];
+
+
   }
 
 }

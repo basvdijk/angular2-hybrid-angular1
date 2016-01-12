@@ -1,13 +1,13 @@
-//import {Injectable} from "angular2/core";
-import {Http} from "angular2/http";
+import {Injectable} from "angular2/core";
+//import {Http} from "angular2/http";
 import {TaskModel} from "./tasks.model"
 
-//@Injectable()
+@Injectable()
 export class TasksDataService {
 
   tasks:Array<any>;
 
-  constructor(http:Http) {
+  constructor() {
     this.tasks = [
       new TaskModel("Dishes"),
       new TaskModel("Cleaning the garage"),
@@ -15,7 +15,7 @@ export class TasksDataService {
     ];
   }
 
-  getTasks() {
+  getTasks():Array<any> {
     return this.tasks;
   }
 }
