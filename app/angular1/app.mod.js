@@ -17,4 +17,5 @@ app.config(['$routeProvider',
       otherwise({
         redirectTo: '/main'
       });
+
   }]);
