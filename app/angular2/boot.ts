@@ -4,7 +4,7 @@ import {UpgradeAdapter} from "angular2/upgrade";
 import {bootstrap} from "angular2/platform/browser";
 
 import {Hello} from "./components/hello/hello";
-import {Tasks} from "./components/tasks/tasks";
+import {Tasks} from "./components/tasks/tasks.component";
 
 // Make Angular available inside typescript. Since the angular variable is not
 // declared inside Typescript. We need to define it to make it available

@@ -1,4 +1,4 @@
-export class TaskModel {
+export class Task {
 
   status: string = "started";
 

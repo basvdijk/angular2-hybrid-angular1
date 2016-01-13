@@ -1,6 +1,6 @@
 import {Component, View} from "angular2/core";
 import {Injectable} from "angular2/core";
-import {TasksDataService} from "./tasks.srv";
+import {TasksDataService} from "./tasks.data.srv";
 
 
 @Component({
