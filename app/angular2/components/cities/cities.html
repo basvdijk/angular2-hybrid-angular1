@@ -1,0 +1,14 @@
+<h2>Cities from webservice</h2>
+
+<h3>Template Data</h3>
+<ul>
+  <li *ngFor="#city of cds.cities">
+    {{city.name}} - {{city.countrycode}}
+  </li>
+</ul>
+
+
+<h3>RAW JSON</h3>
+<pre>
+  {{cds.cities | json}}
+</pre>

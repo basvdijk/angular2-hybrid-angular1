@@ -5,8 +5,11 @@ import {bootstrap} from "angular2/platform/browser";
 
 import {HTTP_PROVIDERS} from "angular2/http";
 
+import "rxjs/add/operator/map";
+
 import {Hello} from "./components/hello/hello";
 import {Tasks} from "./components/tasks/tasks.component";
+import {Cities} from "./components/cities/cities.component";
 
 // Make Angular available inside typescript. Since the angular variable is not
 // declared inside Typescript. We need to define it to make it available
@@ -18,6 +21,7 @@ let adapter: UpgradeAdapter = new UpgradeAdapter();
 // Downgrade Angular 2 component as a directive
 angular.module("app").directive("hello", adapter.downgradeNg2Component(Hello));
 angular.module("app").directive("tasks", adapter.downgradeNg2Component(Tasks));
+angular.module("app").directive("cities", adapter.downgradeNg2Component(Cities));
 
 adapter.addProvider(HTTP_PROVIDERS);
 

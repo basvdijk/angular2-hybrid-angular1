@@ -18,6 +18,10 @@ export class TasksDataService {
 
   }
 
+  private _logError(text) {
+    console.log(text);
+  };
+
   get tasks(): Array<Task> {
     return this._tasks;
   }
