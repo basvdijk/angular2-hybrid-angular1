@@ -15,8 +15,8 @@ import {TasksDataService} from "./tasks.srv";
 @Injectable()
 export class Tasks {
 
-  tasksVariable:Array<any>;
-  tasksServiceData:Array<any>;
+  tasksVariable: Array<any>;
+  tasksServiceData: Array<any>;
 
   constructor(public tasksDataService: TasksDataService) {
 

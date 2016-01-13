@@ -1,6 +1,6 @@
 export class TaskModel {
 
-  status:string = "started";
+  status: string = "started";
 
-  constructor(public title:string = "") {}
+  constructor(public title: string = "") {}
 }
