@@ -20,7 +20,7 @@ export class Tasks {
 
   constructor(public tasksDataService: TasksDataService) {
 
-    this.tasksServiceData = tasksDataService.getTasks();
+    this.tasksServiceData = tasksDataService.tasks;
 
     this.tasksVariable = [
       "task 1",
