@@ -10,4 +10,8 @@ import {Component, View} from "angular2/core";
 
 export class SayHello {
 
+  sayHello() {
+    alert("Hello");
+  }
+
 }
