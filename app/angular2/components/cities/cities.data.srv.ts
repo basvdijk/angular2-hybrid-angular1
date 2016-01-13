@@ -5,7 +5,8 @@ import {City} from "./city.model";
 @Injectable()
 export class CitiesDataService {
 
-  cities: any;
+  public cities: any;
+  public error: string;
 
   constructor(http: Http) {
 
@@ -21,10 +22,20 @@ export class CitiesDataService {
       // Subscribe to the observable to get the parsed cities object and attach it to the
       // component
       .subscribe(
-        data => this.cities = data.geonames,
+        data => this._processData(data),
         err => this._logError(err),
         () => console.log("Downloading cities complete")
       );
+
+  }
+
+  private _processData(data): void {
+
+    if (data.status) {
+      this.error = data.status.message;
+    } else {
+      this.cities = data.geonames;
+    }
 
   }
 

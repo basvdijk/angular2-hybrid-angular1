@@ -1,7 +1,8 @@
 var app = angular.module('app', [
   'ngRoute',
   'main',
-  'menu'
+  'menu',
+  'json'
 ]);
 
 app.config(['$routeProvider',
@@ -13,7 +14,7 @@ app.config(['$routeProvider',
       }).
 
       when('/json', {
-        templateUrl: 'app/angular1/main/json.html',
+        templateUrl: 'app/angular1/json/json.html',
       }).
 
       otherwise({

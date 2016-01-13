@@ -13,7 +13,6 @@ import {Injectable} from "angular2/core";
 export class Tasks {
 
   tasksVariable: Array<any>;
-  tasksServiceData: Array<any>;
 
   constructor() {
 

@@ -23,6 +23,10 @@ angular.module("app").directive("hello", adapter.downgradeNg2Component(Hello));
 angular.module("app").directive("tasks", adapter.downgradeNg2Component(Tasks));
 angular.module("app").directive("cities", adapter.downgradeNg2Component(Cities));
 
+import {CitiesDataService} from "./components/cities/cities.data.srv";
+adapter.addProvider(CitiesDataService);
+angular.module("app").factory("CitiesDataService", adapter.downgradeNg2Provider(CitiesDataService));
+
 adapter.addProvider(HTTP_PROVIDERS);
 
 // Bootstrap the Angular 1 app
