@@ -1,7 +1,6 @@
-import {Component, View} from "angular2/core";
+import {Pipe, Component, View} from "angular2/core";
 import {Injectable} from "angular2/core";
 import {CitiesDataService} from "./cities.data.srv";
-
 
 @Component({
     selector: "cities",
@@ -23,6 +22,10 @@ export class Cities {
     this.cities = [];
     this.cds = citiesDataService;
 
+  }
+
+  doStuff(): string {
+    return "Ok";
   }
 
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular2 Testing Playground - Jasmine</title>
+    <link rel="stylesheet" href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.js"></script>
+    <script src="node_modules/angular2/bundles/testing.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+
+    <script>
+      System.config({
+        //use typescript for compilation
+        transpiler: 'typescript',
+
+        //typescript compiler options
+        typescriptOptions: {
+          emitDecoratorMetadata: true
+        },
+
+        //packages defines our app package
+        packages: {
+          app: {
+            defaultExtension: 'ts'
+          }
+        }
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <script>
+      Promise.all([
+        //System.import('app/angular2/components/cities/cities.data.srv.spec'),
+        System.import('app/angular2/components/cities/city.spec'),
+        System.import('app/angular2/pipes/init-caps/init-caps.pipe.spec'),
+      ])
+      // Causes tests to load three times
+      // .then(window.onload)
+      // .catch(console.error.bind(console));
+    </script>
+  </body>
+
+</html>

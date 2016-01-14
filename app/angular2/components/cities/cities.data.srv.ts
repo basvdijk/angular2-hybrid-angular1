@@ -1,6 +1,7 @@
 import {Injectable} from "angular2/core";
 import {Http} from "angular2/http";
-import {City} from "./city.model";
+import {City} from "./city";
+import "rxjs/add/operator/map"; // https://github.com/angular/angular/issues/5632
 
 @Injectable()
 export class CitiesDataService {
@@ -8,7 +9,7 @@ export class CitiesDataService {
   public cities: any;
   public error: string;
 
-  constructor(http: Http) {
+  constructor(public http: Http) {
 
     // http://www.geonames.org/export/JSON-webservices.html
     http.get("http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=en&username=demo")
@@ -26,7 +27,6 @@ export class CitiesDataService {
         err => this._logError(err),
         () => console.log("Downloading cities complete")
       );
-
   }
 
   private _processData(data): void {
@@ -42,6 +42,17 @@ export class CitiesDataService {
   private _logError(text) {
     console.log(text);
   };
+
+  public doStuff(): string {
+    return "Ok";
+  }
+
+  public getGeoData() {
+
+    return this.http.get("http://api.geonames.org/citiesJSON?north=44.1&south=-9.9&east=-22.4&west=55.2&lang=en&username=demo")
+      .map((res) => res.json());
+
+  }
 
   // get cities(): Array<City> {
   //   return this._cities;
