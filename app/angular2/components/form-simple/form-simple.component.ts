@@ -3,15 +3,15 @@ import {Component, View} from "angular2/core";
 // import {FORM_DIRECTIVES} from "angular2/common";
 
 @Component({
-  selector: "simple-form",
+  selector: "form-simple",
   // directives: [FORM_DIRECTIVES],
 })
 
 @View({
-    templateUrl: "../app/angular2/components/simple-form/simple-form.html"
+    templateUrl: "../app/angular2/components/form-simple/form-simple.html"
 })
 
-export class SimpleForm {
+export class FormSimple {
   onSubmit(value: string): void {
     console.log("you submitted value: ", value);
   }

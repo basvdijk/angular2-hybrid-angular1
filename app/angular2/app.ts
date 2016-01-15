@@ -10,7 +10,7 @@ import "rxjs/add/operator/map";
 import {Hello} from "./components/hello/hello";
 import {Tasks} from "./components/tasks/tasks.component";
 import {Cities} from "./components/cities/cities.component";
-import {SimpleForm} from "./components/simple-form/simple-form.component";
+import {FormSimple} from "./components/form-simple/form-simple.component";
 
 // Make Angular available inside typescript. Since the angular variable is not
 // declared inside Typescript. We need to define it to make it available
@@ -24,7 +24,7 @@ let adapter: UpgradeAdapter = new UpgradeAdapter();
 angular.module("app").directive("hello", adapter.downgradeNg2Component(Hello));
 angular.module("app").directive("tasks", adapter.downgradeNg2Component(Tasks));
 angular.module("app").directive("cities", adapter.downgradeNg2Component(Cities));
-angular.module("app").directive("simpleForm", adapter.downgradeNg2Component(SimpleForm));
+angular.module("app").directive("formSimple", adapter.downgradeNg2Component(FormSimple));
 
 import {CitiesDataService} from "./components/cities/cities.data.srv";
 adapter.addProvider(CitiesDataService);
