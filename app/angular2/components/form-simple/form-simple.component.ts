@@ -1,10 +1,9 @@
-import {Component, View} from "angular2/core";
+// Based on http://blog.ng-book.com/the-ultimate-guide-to-forms-in-angular-2/
 
-// import {FORM_DIRECTIVES} from "angular2/common";
+import {Component, View} from "angular2/core";
 
 @Component({
   selector: "form-simple",
-  // directives: [FORM_DIRECTIVES],
 })
 
 @View({
@@ -16,29 +15,3 @@ export class FormSimple {
     console.log("you submitted value: ", value);
   }
 }
-
-/*
-https://github.com/angular/angular/blob/master/modules/angular2/src/common/forms/directives.ts
-export const FORM_DIRECTIVES: Type[] = CONST_EXPR([
-  NgControlName,
-  NgControlGroup,
-
-  NgFormControl,
-  NgModel,
-  NgFormModel,
-  NgForm,
-
-  NgSelectOption,
-  DefaultValueAccessor,
-  NumberValueAccessor,
-  CheckboxControlValueAccessor,
-  SelectControlValueAccessor,
-  NgControlStatus,
-
-  RequiredValidator,
-  MinLengthValidator,
-  MaxLengthValidator
-]);
-Status API Training Shop Blog About Pricing
-
-*/

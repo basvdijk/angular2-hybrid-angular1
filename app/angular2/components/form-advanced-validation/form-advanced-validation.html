@@ -1,0 +1,51 @@
+<style>
+  .error {
+    color: red;
+  }
+</style>
+
+<div class="ui raised segment">
+  <h2 class="ui header">Form with FormBuilder validation module</h2>
+  <form [ngFormModel]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+
+    <div class="field" [class.error]="!myForm.find('sku').valid && myForm.find('sku').touched">
+
+      <label for="skuInput">SKU</label>
+      <input type="text" id="skuInput" placeholder="SKU" #sku="ngForm" [ngFormControl]="myForm.controls['sku']">
+
+      <div *ngIf="!sku.control.valid" class="ui error message">SKU is invalid</div>
+      <div *ngIf="sku.control.hasError('required')" class="ui error message">SKU is required</div>
+
+    </div>
+
+    <hr>
+
+    <div class="field">
+      <label for="skuInputValidator">SKU2</label>
+      <input type="text" id="skuInputValidator" placeholder="SKU2" #sku2="ngForm" [ngFormControl]="myForm.controls['sku2']">
+
+      <div *ngIf="!sku2.control.valid" class="ui error message">SKU2 is invalid</div>
+
+      <div *ngIf="sku2.control.hasError('invalidSku')" class="ui error message">SKU must begin with <tt>123</tt></div>
+
+      <div *ngIf="sku2.control.hasError('required')" class="ui error message">SKU2 is required</div>
+
+    </div>
+
+    <hr>
+
+    <input type="text" id="productNameInput" placeholder="Product Name" [ngFormControl]="myForm.find('productName')" [(ngModel)]="productName">
+
+    <hr>
+
+    <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>
+
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+
+  <div class="ui info message">
+    The product name is: {{productName}}
+  </div>
+
+  
+</div>
