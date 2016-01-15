@@ -41,7 +41,7 @@ describe("Service with Http injected", () => {
     //     c => c.mockRespond(new Response(responseOptions)));
     //
     //     let res = CitiesDataService.getGeoData();
-        expect(res).toEqual("your own expectation");
+    //    expect(res).toEqual("your own expectation");
       }));
 
 });
@@ -83,7 +83,7 @@ describe("CitiesDataService", () => {
 
 
 //  it("should get some data", inject([injectAsync], (async) => {
-  //it("should get some data", () => {
+  // it("should get some data", () => {
   //
   //   let connection;
     // let injector = Injector.resolveAndCreate([
